@@ -1,0 +1,23 @@
+
+<div class="container mt-4 pt-4 bg-info" style="width: 830px;height: 310px; border: 1px solid;">
+    <form>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" [(ngModel)]="order.name" name="name" id="name" aria-describedby="name" placeholder="Enter name">
+    
+        </div>
+        <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" class="form-control" name="location" [(ngModel)]="order.location" id="location" aria-describedby="location" placeholder="Enter location">
+      
+          </div>
+          <div class="form-group">
+            <label for="status">Status</label>
+            <input type="text" class="form-control" name="status" [(ngModel)]="order.status" id="status" aria-describedby="status" placeholder="Enter status">
+      
+          </div>
+          <br>
+        <button type="submit" (click)="update()"  class="btn btn-primary">Update</button>
+        <button type="button" (click)="cancel()"  class="btn btn-danger m-2">Cancel</button>
+      </form>
+</div>

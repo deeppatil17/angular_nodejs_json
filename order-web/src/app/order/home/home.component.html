@@ -1,0 +1,26 @@
+<div class="container" style="width: 850px;">
+    <br>
+    <input type="search" (input)="filterOrder(filter.value)" placeholder="Search Order Here" name="inputsearch" id="inputsearch" #filter>
+    <table class="table table-tripped mt-2" style="border: 1px salmon;">
+        <thead>
+            <tr class="bg-primary">
+                <th (click)="sortBy('id')" scope="col">OrderId</th>
+                <th (click)="sortBy('name')" scope="col">Name</th>
+                <th (click)="sortBy('location')" scope="col">Location</th>
+                <th (click)="sortBy('status')" scope="col">Status</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of filteredOrders">
+                <td scope="row">{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.location}}</td>
+                <td>{{item.status}}</td>
+                <td><button [routerLink]="['/order/edit',item.id]" class="btn btn-primary">Edit</button></td>
+                <td><button class="btn btn-danger" (click)="delete(item.id)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
